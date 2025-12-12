@@ -72,13 +72,13 @@ function Verlauf() {
   return (
     <div className="verlauf">
       <h2>Rechnungsverlauf</h2>
-      <h1>oddddddddddd</h1>
+
       {entries.length === 0 ? (
         <p>Kein Verlauf vorhanden.</p>
       ) : (
         <ul>
           {entries.map((doc) => (
-            <li key={doc.id || doc._id}>
+            <li key={doc.id || doc._id} className="verlauf-item">
               {editId === (doc.id || doc._id) ? (
                 <>
                   <input
@@ -96,12 +96,13 @@ function Verlauf() {
                 </>
               ) : (
                 <>
-                  <strong>{doc.content.expression}</strong> = {doc.content.result}
-                  <br />
-                  <small>
-                    {new Date(doc.content.createdAt).toLocaleString()}
-                  </small>
-                  <br />
+                  <div className="verlauf-text">
+                    <strong>{doc.content.expression}</strong> = {doc.content.result}
+                    <br />
+                    <small>
+                      {new Date(doc.content.createdAt).toLocaleString()}
+                    </small>
+                  </div>
                   <button onClick={() => startEdit(doc)}>Bearbeiten</button>
                 </>
               )}

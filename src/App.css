@@ -5,38 +5,112 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.display {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
+.result {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
   color: #888;
 }
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+button:active {
+  background-color: #d0d0d0;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Orange für die Operatoren (+, -, *, /) */
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16) {
+  background-color: #ff8c00; /* Operator buttons (+, -, *, /) */
+  color: white;
+}
+
+/* Der C-Button ist rot */
+button:nth-child(13) {
+  background-color: #ff0000; /* Clear button (C) */
+  color: white;
+}
+
+/* Der Equals-Button bleibt blau */
+button:nth-child(15) {
+  background-color: #007bff; /* Equals button (=) */
+  color: white;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  width: 140px;   /* feste Breite */
+  justify-self: center; /* optional: mittig im Grid */
+  margin: 10px;
+}
+
+.verlauf button {
+  margin-left: 5px;
+  
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+    padding: 2px;      /* weniger Innenabstand */
+  font-size: 1rem;     /* kleinere Schrift */
+  
+}
+
+.verlauf button:hover {
+  background-color: #0056b3;
+}
+
+.verlauf-item {
+  display: flex;
+  justify-content: space-between; /* Text links, Button rechts */
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.verlauf-text {
+  text-align: left;
+}
+
+
+
+
